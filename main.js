@@ -67,6 +67,18 @@ function promptForInformation(type) {
   return results;
 }
 
+// function to determine if more info will be collected
+function gatherData(type) {
+  var results = [];
+  var keepGoing = true;         // returns true by default
+    while (keepGoing) {
+    var result = runPrompts(type);
+    results.push(result);
+    keepGoing = confirm("Would you like to continue?");
+  }
+return results;
+}
+
 // function to collect information to insert on the DOM
 function insertsDOM (object) {
   var list = document.getElementById('data');
@@ -81,18 +93,6 @@ function displayDOM (array) {
   array.forEach(function(name) {
   insertsDOM(name);
   });
-}
-
-// function to determine if more info will be collected
-function gatherData(type) {
-  var results = [];
-  var keepGoing = true;         // returns true by default
-    while (keepGoing) {
-    var result = runPrompts(type);
-    results.push(result);
-    keepGoing = confirm("Would you like to continue?");
-  }
-return results;
 }
 
 // display results on the DOM
