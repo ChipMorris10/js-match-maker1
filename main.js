@@ -74,7 +74,7 @@ function gatherData(type) {
     while (keepGoing) {
     var result = runPrompts(type);
     results.push(result);
-    keepGoing = confirm("Would you like to continue?");
+    keepGoing = confirm("Would you like to continue? Press Cancel to stop");
   }
 return results;
 }
